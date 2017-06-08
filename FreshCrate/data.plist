@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fruits</key>
+	<array>
+		<string>Watermelon</string>
+		<string>Mango</string>
+		<string>Peach</string>
+		<string>Banana</string>
+		<string>Grape</string>
+		<string>Orange</string>
+		<string>Apple</string>
+		<string>Strawberry</string>
+	</array>
+	<key>vegetables</key>
+	<array>
+		<string>Carrot</string>
+		<string>Potato</string>
+		<string>Broccoli</string>
+		<string>Tomato</string>
+		<string>Onion</string>
+		<string>Lettuce</string>
+	</array>
+	<key>sellers</key>
+	<array>
+		<dict>
+			<key>sellerRating</key>
+			<string>7/10</string>
+			<key>sellerName</key>
+			<string>John Don</string>
+			<key>sellerLocation</key>
+			<string>220 John Street</string>
+			<key>sellerLatitude</key>
+			<string>43.084129700</string>
+			<key>sellerLongitude</key>
+			<string>-77.656341700</string>
+			<key>produces</key>
+			<array>
+				<dict>
+					<key>itemPrice</key>
+					<string>10</string>
+					<key>itemDescription</key>
+					<string>fat WATERMELLOOON</string>
+					<key>itemName</key>
+					<string>Watermelon</string>
+				</dict>
+				<dict>
+					<key>itemPrice</key>
+					<string>6</string>
+					<key>itemDescription</key>
+					<string>new WATERMELLOOON</string>
+					<key>itemName</key>
+					<string>Mango</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>sellerRating</key>
+			<string>5/10</string>
+			<key>sellerName</key>
+			<string>Johnny</string>
+			<key>sellerLocation</key>
+			<string>2973 West Henrietta Road, Rochester, NY, United States</string>
+			<key>sellerLatitude</key>
+			<string>43.092434000</string>
+			<key>sellerLongitude</key>
+			<string>-77.634659000</string>
+			<key>produces</key>
+			<array>
+				<dict>
+					<key>itemPrice</key>
+					<integer>8</integer>
+					<key>description</key>
+					<string>skinny WATERMELLOOON</string>
+					<key>itemName</key>
+					<string>Watermelon</string>
+				</dict>
+				<dict>
+					<key>itemPrice</key>
+					<integer>8</integer>
+					<key>description</key>
+					<string>skinny Orange</string>
+					<key>itemName</key>
+					<string>Orange</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
