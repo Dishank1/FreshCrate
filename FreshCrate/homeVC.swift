@@ -35,11 +35,7 @@ class homeVC: UIViewController {
 
        override func viewDidLoad() {
         super.viewDidLoad()
-        //print("got homeVC \(fruits.count)")
-//        for fruit in fruits {
-//            print("\(fruit)")
-//        }
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -61,7 +57,6 @@ class homeVC: UIViewController {
                 print("iden\(String(describing: segue.identifier))")
                 tableVC.fruitList = homeVC.fruitList
                 tableVC.sellerList = homeVC.sellerList
-                //myDestination.title = fruit
             }
         }
     }

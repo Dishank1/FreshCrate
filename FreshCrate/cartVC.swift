@@ -86,7 +86,7 @@ class cartVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath)
         let item = cartArray[indexPath.row]
-        print("TABLE VIEW\(item.getName())")
+        //print("TABLE VIEW\(item.getName())")
         cell.textLabel?.text = "\(item.getName())"
         // Configure the cell...
         

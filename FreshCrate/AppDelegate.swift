@@ -17,47 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var sellers : [Seller] = []
 
 
-//    func loadData(){
-//        if let path = Bundle.main.path(forResource: "data", ofType: "plist"){
-//            let tempDict = NSDictionary(contentsOfFile: path)
-//            print(tempDict?.count)
-//
-//        let fruitArray = (tempDict!.value(forKey:"fruits")as! NSArray) as Array
-//        print(fruitArray.count)
-//        
-//        let vegArray = (tempDict!.value(forKey:"vegetables")as! NSArray) as Array
-//        print(vegArray.count)
-//            
-//        let sellerArray = (tempDict!.value(forKey:"sellers")as! NSArray) as Array
-//
-//        
-//            
-//        for eachFruit in fruitArray{
-//            let fruitObj = Fruit(fruitName: eachFruit as! String)
-//            fruits.append(fruitObj)
-//            }
-//            
-//            
-//            
-//            
-//            for dict in sellerArray{
-//                let sellerName = dict["sellerName"]! as! String
-//                let sellerLocation = dict["sellerLocation"]! as! String
-//                let latitude = (dict["sellerLatitude"]! as! NSString).doubleValue
-//                let longitude = (dict["sellerLongitude"]! as! NSString).doubleValue
-//                let location = CLLocation(latitude: latitude,longitude: longitude)
-//                let produces = dict["produces"]! as! NSArray
-//                let s = Seller(sellerName: sellerName, sellerLocation: sellerLocation, location: location,produces: produces)
-//                print("sell \(s)")
-//                sellers.append(s)
-//            }
-//            
-//            
-//        print("There are \(fruits.count) fruits")
-//        print("\(fruits)")
-//        }
-//    }
-
     func loadData(){
         if let path = Bundle.main.path(forResource: "data", ofType: "plist"){
             let tempDict = NSDictionary(contentsOfFile: path)

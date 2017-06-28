@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -256,7 +256,6 @@
                                 </state>
                                 <connections>
                                     <action selector="addToCartAction:" destination="MLS-Le-pPf" eventType="touchUpInside" id="bnp-TL-QYE"/>
-                                    <segue destination="PJj-pg-TMa" kind="show" identifier="quantityToCartSegue" action="showDetailViewController:sender:" id="CwU-5n-44K"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -312,60 +311,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="HqW-OR-PkM" kind="relationship" relationship="viewControllers" id="UiZ-vO-SL8"/>
-                        <segue destination="PJj-pg-TMa" kind="relationship" relationship="viewControllers" id="lJZ-eZ-aK4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5V1-3T-7hh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1023" y="136"/>
         </scene>
-        <!--Cart-->
-        <scene sceneID="wty-VF-st0">
-            <objects>
-                <viewController id="PJj-pg-TMa" customClass="cartVC" customModule="FreshCrate" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="G6K-zb-OJB"/>
-                        <viewControllerLayoutGuide type="bottom" id="7mI-Lv-ddj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wk3-bV-s40">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Baw-H0-1aW">
-                                <rect key="frame" x="16" y="135" width="343" height="365"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartCell" id="Od4-1e-3wd">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Od4-1e-3wd" id="SRX-27-56t">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.80000000000000004" green="0.91764705879999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Cart" image="Shopping Cart-38.png" selectedImage="Shopping Cart-38.png" id="A8g-Ob-13t"/>
-                    <connections>
-                        <outlet property="tableView" destination="Baw-H0-1aW" id="XAd-3m-7fl"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g6L-N1-YSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2614" y="618"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Home-38.png" width="38" height="38"/>
-        <image name="Shopping Cart-38.png" width="38" height="38"/>
         <image name="logo without bg.png" width="1824" height="1095"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lJZ-eZ-aK4"/>
         <segue reference="VSt-iC-yXi"/>
     </inferredMetricsTieBreakers>
 </document>

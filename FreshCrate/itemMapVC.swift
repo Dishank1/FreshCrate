@@ -10,6 +10,14 @@ import UIKit
 import MapKit
 import CoreLocation
 
+extension MKMapView {
+    
+    func contains(coordinate: CLLocationCoordinate2D) -> Bool {
+        return MKMapRectContainsPoint(self.visibleMapRect, MKMapPointForCoordinate(coordinate))
+    }
+    
+}
+
 class itemMapVC: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     
     var fruit:Fruit!
@@ -41,17 +49,19 @@ class itemMapVC: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         for seller:Seller in sellers{
-            if((seller.checkProduce(itemName: self.title!)) != nil)
-            {
-                let region = MKCoordinateRegionMakeWithDistance(seller.coordinate, 5000, 5000)
-                mapView.setRegion(region, animated: true)
+            if((seller.checkProduce(itemName: self.title!)) != nil && mapView.contains(coordinate: seller.coordinate)){
+                
                 mapView.addAnnotation(seller as MKAnnotation)
-                //selectedFruitSellers.append(seller)
             }
         }
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let region = MKCoordinateRegionMakeWithDistance(sendMyLocation().coordinate, 20000, 20000)
+        mapView.setRegion(region, animated: true)
         manager.requestAlwaysAuthorization()
         manager.requestWhenInUseAuthorization()
         
@@ -107,25 +117,19 @@ class itemMapVC: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         return nil
     }
     
+    func sendMyLocation()->CLLocation{
+        let latitude = manager.location!.coordinate.latitude
+        let longitude = manager.location!.coordinate.longitude
+        let myLocation = CLLocation(latitude: latitude, longitude: longitude)
+        return myLocation
+    }
+    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let sellerAnnotation = view.annotation as! Seller
         let sellerName = view.annotation?.title
         switch control.tag{
         case 0:
-           // let geocoder = CLGeocoder()
-            //            //let coordinate = manager.location?.coordinate
-            //            let location = CLLocation(latitude: sellerAnnotation.getLocation().coordinate.latitude, longitude: sellerAnnotation.getLocation().coordinate.longitude)
-            //            geocoder.reverseGeocodeLocation(location, completionHandler:{(placemarks:[CLPlacemark]?,error:Error?)->Void in
-            //
-            //                if let placemark = placemarks?[0]{
-            //                    let place = MKPlacemark(placemark: placemark)
-            //                    let mapItem = MKMapItem(placemark: place)
-            //                    let options = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
-            //                    mapItem.openInMaps(launchOptions: options)
-            //                }
-            //            })
-
-            break
+                       break
             
         case 1:
             selectedFruitSeller = sellerAnnotation
@@ -146,11 +150,10 @@ class itemMapVC: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
         if let myDestination = segue.destination as? quantityVC{
             if let itemMapVC = sender as? itemMapVC{
-                print("insegue for table to map")
+                //print("insegue for table to map")
                 myDestination.fruitName = itemMapVC.title!
-                //myDestination.title = "Add to Cart"
                 myDestination.fruitList = itemMapVC.fruitList
-                print("in mapvc com\(itemMapVC.fruitList.fruitList.count)")
+                //print("in mapvc com\(itemMapVC.fruitList.fruitList.count)")
                 myDestination.sellerList = itemMapVC.sellerList
                 myDestination.selectedFruitSeller = itemMapVC.selectedFruitSeller
             }
